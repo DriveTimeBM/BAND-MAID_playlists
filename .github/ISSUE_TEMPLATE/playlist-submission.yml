@@ -1,0 +1,59 @@
+name: Playlist Submission
+description: Submit a BAND-MAID playlist to be added to the community list.
+title: "Playlist submission: <playlist name>"
+labels: ["playlist-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing a playlist! Paste the full JSON copied from the Share / Submit dialog
+        in the app. If you have any extra notes or context (theme, what to listen for, etc.),
+        feel free to add them below the JSON block.
+
+  - type: input
+    id: name
+    attributes:
+      label: Playlist name
+      placeholder: e.g. Live Heavy Hitters
+    validations:
+      required: true
+
+  - type: input
+    id: created-by
+    attributes:
+      label: Created by
+      description: How would you like to be credited? (handle, name, etc.)
+      placeholder: e.g. AwesomeFan99
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What's this playlist about? Mood, theme, occasion.
+      placeholder: A one-or-two-sentence description.
+    validations:
+      required: true
+
+  - type: textarea
+    id: playlist-json
+    attributes:
+      label: Playlist JSON
+      description: Paste the JSON copied from the app's Share / Submit dialog.
+      render: json
+      placeholder: |
+        {
+          "name": "...",
+          "createdBy": "...",
+          "description": "...",
+          "videoIds": ["...", "..."]
+        }
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Extra notes (optional)
+      placeholder: Anything else you'd like the curator to know.
