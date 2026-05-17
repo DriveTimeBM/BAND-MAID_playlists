@@ -9,8 +9,15 @@
     {
         "name":  "1M Push",
         "createdBy":  "DriveTime",
-        "description":  "Videos needing a push towards 1M views.",
+        "description":  "Videos needing a push towards 1M views (Auto generated).",
         "file":  "push.json",
         "count":  10
+    },
+    {
+        "name":  "Under 100K",
+        "createdBy":  "DriveTime",
+        "description":  "Videos needing a push towards 100K views (Auto generated).",
+        "file":  "100K.json",
+        "count":  8
     }
 ]
