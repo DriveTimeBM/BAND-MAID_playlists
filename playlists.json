@@ -1,23 +1,9 @@
 ﻿[
     {
-        "name":  "Example: Live Heavy Hitters",
-        "createdBy":  "DriveTimeBM",
-        "description":  "Hard-hitting live performances to demonstrate the format. Replace or delete this entry once real playlists are submitted.",
-        "file":  "example-live-heavy-hitters.json",
-        "count":  5
-    },
-    {
-        "name":  "TEST",
-        "createdBy":  "DT",
-        "description":  "2nd test",
-        "file":  "test.json",
-        "count":  2
-    },
-    {
-        "name":  "Test Playlist",
-        "createdBy":  "DT",
-        "description":  "",
-        "file":  "test-playlist.json",
-        "count":  2
+        "name":  "Anime Songs",
+        "createdBy":  "DriveTime",
+        "description":  "BAND-MAID songs used in anime.",
+        "file":  "anime-songs.json",
+        "count":  9
     }
 ]
