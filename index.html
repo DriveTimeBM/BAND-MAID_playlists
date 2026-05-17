@@ -845,13 +845,12 @@ async function loadCommunityIndex() {
 function refreshCommunityList() {
   const sel = document.getElementById('communitySelect');
   sel.innerHTML = '<option value="">— Load community playlist —</option>';
-  // Sort by name, then group visually by author would be nice but plain alpha is fine for v1
   communityIndex
     .slice()
     .sort((a,b) => a.name.localeCompare(b.name))
-    .forEach((p, i) => {
+    .forEach(p => {
       const opt = document.createElement('option');
-      opt.value = String(i);
+      opt.value = p.file;
       const cnt = p.count != null ? ` (${p.count})` : '';
       const by = p.createdBy ? ` — ${p.createdBy}` : '';
       opt.textContent = `${p.name}${cnt}${by}`;
@@ -860,9 +859,9 @@ function refreshCommunityList() {
 }
 
 async function loadCommunityPlaylist() {
-  const idx = document.getElementById('communitySelect').value;
-  if (idx === '') return;
-  const meta = communityIndex[parseInt(idx)];
+  const file = document.getElementById('communitySelect').value;
+  if (!file) return;
+  const meta = communityIndex.find(p => p.file === file);
   if (!meta || !meta.file) return;
   try {
     const res = await fetch(COMMUNITY_FOLDER + meta.file + '?_=' + Date.now());
